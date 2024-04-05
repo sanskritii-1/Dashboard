@@ -1,17 +1,18 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
-export default function Sidebar(){
+export default function Sidebar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Function to toggle the sidebar visibility
+    // Function to toggle the sidebar visibility
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
     return (
         <div>
+
             <button className="sidebar-toggle-button" onClick={toggleSidebar}>
-            {isSidebarOpen ? '<' : '>'}
+                {isSidebarOpen ? '<' : '>'}
             </button>
 
             {/* Sidebar */}
@@ -25,7 +26,6 @@ export default function Sidebar(){
                     {/* Add more sidebar items as needed */}
                 </ul>
             </div>
-
         </div>
     )
 }
