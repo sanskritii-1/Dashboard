@@ -1,0 +1,117 @@
+/* Dashboard container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    /* Full height of viewport */
+}
+
+/* Button to toggle sidebar on small screens */
+.sidebar-toggle-button {
+    display: block;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #333;
+    color: white;
+    width: 200px;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    height: 100vh;
+}
+
+.sidebar h2{
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Hide sidebar on small screens */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        /* Fixes sidebar position */
+        z-index: 998;
+        /* Ensure sidebar is behind content */
+    }
+
+    /* Show sidebar toggle button */
+    /* .sidebar-toggle-button {
+        display: block;
+    } */
+
+}
+
+
+/* .sidebar-open{
+    display: block;
+}
+.sidebar-close{
+    display: none;
+} */
+
+/* Sidebar items */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+#profile{
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+    width: 80%;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    /* Take remaining space */
+    padding: 20px;
+    /* flex-direction: column; */
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+
+/* Example box styles */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow boxes to wrap to the next line */
+}
+
+.box {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    /* Add some margin between the boxes */
+    /*flex: 1; /* Each box takes equal space */
+    width: 300px;
+    /* Limit the maximum width of each box */
+}
