@@ -9,7 +9,7 @@ export default function Sidebar() {
     };
 
     return (
-        <div>
+        <div className="whole-sidebar">
 
             <button className="sidebar-toggle-button" onClick={toggleSidebar}>
                 {isSidebarOpen ? '<' : '>'}
@@ -20,8 +20,8 @@ export default function Sidebar() {
                 <h2>Sidebar</h2>
                 <ul>
                     <li>Dashboard</li>
-                    <li>Analytics</li>
-                    <li>Settings</li>
+                    <li>Intensity</li>
+                    <li>Likelihood</li>
                     <li id="profile">Profile</li>
                     {/* Add more sidebar items as needed */}
                 </ul>
