@@ -1,4 +1,4 @@
- [
+export const data = [
         {
             "end_year": "",
             "intensity": 6,
