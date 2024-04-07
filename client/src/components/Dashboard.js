@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
+import Intensity from './IntensityGraph';
+import Likelihood from './Likelihood';
+import Country from './Country';
 
 function Dashboard() {
 
@@ -17,9 +20,9 @@ function Dashboard() {
                 {/* Main Content Area */}
                 <div className="box-container">
                     {/* Example boxes */}
-                    <div className="box">Box 1</div>
-                    <div className="box">Box 2</div>
-                    <div className="box">Box 3</div>
+                    <Intensity />
+                    <Likelihood />
+                    <Country />
                 </div>
             </div>
         </div>

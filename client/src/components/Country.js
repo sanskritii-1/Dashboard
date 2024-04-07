@@ -6,7 +6,7 @@ import { Bar } from "react-chartjs-2";
 
 Chart.register(CategoryScale);
 
-export default function Intensity(){
+export default function Country(){
     const [chartData, setChartData] = useState({
         labels: [],
         datasets: [
@@ -39,17 +39,17 @@ export default function Intensity(){
         ]
       });
     
-
       useEffect(() => {
         const fetchData = async () => {
           try {
             const res = await axios.post("http://localhost:5000/graph/getVal", {
-              field: "intensity"
+              field: "country"
             });
             const data = res.data;
-            data.sort((a,b) => a._id - b._id);
-            console.log("fron side: ",data)
-            
+            data.sort((a,b)=>{
+                if(a._id.toLowerCase()<=b._id.toLowerCase()) return -1;
+                return 0;
+            })
             setChartData({
               ...chartData,
               labels: data.map((entry) => entry._id),
@@ -73,7 +73,7 @@ export default function Intensity(){
         plugins: {
           title: {
             display: true,
-            text: "Intensity Frequency",
+            text: "Country Frequency",
             color: "white",
             font: {
               size: 16,
@@ -90,7 +90,7 @@ export default function Intensity(){
             stepSize: 10,
             title:{
               display:true,
-              text: "Intensity",
+              text: "Country",
               color: "white"
             },
             grid:{
@@ -111,15 +111,18 @@ export default function Intensity(){
             },
             grid: {
               display: false,
-            }
+            },
           }
         },
-        barThickness: 24,
+        barThickness: 23,
+        maintainAspectRatio: false,
+        height: 700,
+        width: 700
       }
 
 
     return(
-      <div className="box intensity-count">
+      <div className="box country-count">
         <Bar data={chartData} options={options} />
 
       </div>

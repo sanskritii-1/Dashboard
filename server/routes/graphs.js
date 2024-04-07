@@ -13,7 +13,8 @@ router.post("/getVal", async (req,res)=>{
             {$group:{
                 _id: `$${req.body.field}`,
                 count: {$sum:1}
-            }}
+            }},
+            {$match:{_id: {$nin:[null,""]}}}
         ])
 
         res.json(response);

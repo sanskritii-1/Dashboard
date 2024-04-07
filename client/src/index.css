@@ -1,16 +1,24 @@
 /* Dashboard container */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .dashboard-container {
     display: flex;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     /* Full height of viewport */
 }
 
 .whole-sidebar{
-    position: relative;
+    /* position: relative; */
 }
 /* Button to toggle sidebar on small screens */
 .sidebar-toggle-button {
-    position: absolute;
+    position: fixed;
     display: block;
     background-color: #333;
     color: white;
@@ -18,7 +26,7 @@
     /* padding: 10px; */
     cursor: pointer;
     top: 0;
-    right: 0;
+    /* right: 0; */
     z-index: 999;
     width: 30px;
     height: 40px;
@@ -27,13 +35,14 @@
 
 /* Sidebar */
 .sidebar {
-    background-color: #333;
+    background-color: black;
     color: white;
     width: 200px;
     /* padding: 20px; */
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    position: relative;
+    /* position: relative; */
+    position: fixed;
     height: 100vh;
     display: flex;
     flex-direction: column; 
@@ -46,6 +55,20 @@
     /* background-color: aqua; */
     width: 90%;
     border-bottom: 1px solid #ccc;
+}
+
+.main-content {
+    /* flex: 1; */
+    /* Take remaining space */
+    padding: 20px;
+    /* flex-direction: column; */
+    background-color: #705a5b;
+    background-color: rgba(56,48,59,255);
+    color: white;
+    margin-left: 200px;
+    background-image: linear-gradient(45deg, rgba(109,87,88,255), rgba(56,48,59,255));
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Hide sidebar on small screens */
@@ -63,10 +86,10 @@
         left:0
     }
 
-
+    .main-content{
+        margin-left: 0;
+    }
 }
-
-
 
 
 /* Sidebar items */
@@ -90,12 +113,8 @@
 }
 
 /* Main content */
-.main-content {
-    flex: 1;
-    /* Take remaining space */
-    padding: 20px;
-    /* flex-direction: column; */
-}
+
+
 
 /* Header */
 header {
@@ -118,11 +137,25 @@ header h1 {
 
 .box {
     background-color: #f0f0f0;
+    background-color: rgba(243, 240, 245, 0.3);
+    color: white;
     border: 1px solid #ccc;
     padding: 20px;
     margin: 10px;
     /* Add some margin between the boxes */
     /*flex: 1; /* Each box takes equal space */
-    width: 300px;
+    width: 600px;
+    height: 350px;
     /* Limit the maximum width of each box */
+}
+
+.likelihood-count{
+    width: 370px;
+}
+.intensity-count{
+    width: 750px;
+}
+.country-count{
+    width: 750px;
+    height: 750px;
 }
