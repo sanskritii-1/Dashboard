@@ -22,7 +22,6 @@ function Dashboard() {
                     {/* Example boxes */}
                     <Intensity />
                     <Likelihood />
-                    <Country />
                 </div>
             </div>
         </div>

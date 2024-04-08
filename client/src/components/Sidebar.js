@@ -17,14 +17,20 @@ export default function Sidebar() {
 
             {/* Sidebar */}
             <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-                <h2>Sidebar</h2>
-                <ul>
-                    <li>Dashboard</li>
-                    <li>Intensity</li>
-                    <li>Likelihood</li>
-                    <li id="profile">Profile</li>
+                <div className="sidebar-list-item">
+                    <h2>Sidebar</h2>
+                    <ul>
+                        <li className="item">Dashboard</li>
+                        <li className="item">Intensity</li>
+                        <li className="item">Likelihood</li>
+                    </ul>
+                </div>
+                <div className="profile-list-item">
+                    <ul>
+                        <li className="item" id="profile">Profile</li>
+                    </ul>
+                </div>
                     {/* Add more sidebar items as needed */}
-                </ul>
             </div>
         </div>
     )

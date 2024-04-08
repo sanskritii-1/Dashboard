@@ -1,5 +1,6 @@
 /* Dashboard container */
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     margin: 0;
@@ -7,15 +8,15 @@ html, body {
 }
 
 .dashboard-container {
-    display: flex;
+    /* display: flex; */
     height: 100%;
     width: 100%;
-    /* Full height of viewport */
 }
 
-.whole-sidebar{
+.whole-sidebar {
     /* position: relative; */
 }
+
 /* Button to toggle sidebar on small screens */
 .sidebar-toggle-button {
     position: fixed;
@@ -38,22 +39,27 @@ html, body {
     background-color: black;
     color: white;
     width: 200px;
-    /* padding: 20px; */
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    /* position: relative; */
     position: fixed;
     height: 100vh;
     display: flex;
-    flex-direction: column; 
-    /* justify-content: center; Center vertically */
-    align-items: center; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.sidebar h2{
-    padding: 15px 0;
-    /* background-color: aqua; */
+.sidebar-list-item {
     width: 90%;
+}
+
+.profile-list-item {
+    width: 90%;
+    border-top: 1px solid #ccc;
+}
+
+.sidebar h2 {
+    padding: 15px 0;
     border-bottom: 1px solid #ccc;
 }
 
@@ -61,12 +67,11 @@ html, body {
     /* flex: 1; */
     /* Take remaining space */
     padding: 20px;
-    /* flex-direction: column; */
-    background-color: #705a5b;
-    background-color: rgba(56,48,59,255);
+    height: 100%;
+    /* background-color: rgba(56,48,59,255); */
     color: white;
     margin-left: 200px;
-    background-image: linear-gradient(45deg, rgba(109,87,88,255), rgba(56,48,59,255));
+    background-image: linear-gradient(45deg, rgba(109, 87, 88, 255), rgba(56, 48, 59, 255));
     background-size: cover;
     background-attachment: fixed;
 }
@@ -83,10 +88,10 @@ html, body {
 
     /* Show sidebar toggle button */
     .sidebar-toggle-button {
-        left:0
+        left: 0
     }
 
-    .main-content{
+    .main-content {
         margin-left: 0;
     }
 }
@@ -101,15 +106,6 @@ html, body {
 .sidebar ul li {
     padding: 10px 0;
     cursor: pointer;
-}
-
-#profile{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    border-top: 1px solid #ccc;
-    width: 98%;
-    /* background-color: rgb(207, 151, 79); */
 }
 
 /* Main content */
@@ -149,13 +145,15 @@ header h1 {
     /* Limit the maximum width of each box */
 }
 
-.likelihood-count{
+.likelihood-count {
     width: 370px;
 }
-.intensity-count{
+
+.intensity-count {
     width: 800px;
 }
-.country-count{
+
+.country-count {
     width: 1300px;
     height: 750px;
 }
