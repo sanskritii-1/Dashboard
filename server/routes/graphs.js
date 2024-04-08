@@ -24,4 +24,18 @@ router.post("/getVal", async (req,res)=>{
     }
 })
 
+router.post("getMean", async (req, res)=>{
+    try{
+        const response = await Info.aggregate([
+            {$group: {
+                _id: `$${req.body.xaxis}`,
+                mean: {$avg: `$${req.body.yaxis}`}
+            }},
+        ])
+    }
+    catch(err){
+        console.log(err);
+    }
+})
+
 export default router;

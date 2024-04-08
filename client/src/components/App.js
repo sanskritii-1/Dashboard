@@ -1,6 +1,5 @@
 import React from "react";
-import Intensity from "./IntensityGraph"
-import Dashboard from "./Dashboard";
+import Dashboard from "../pages/Dashboard";
 
 export default function App(){
     return <div className="App"><Dashboard /></div>

@@ -115,6 +115,7 @@ export default function Intensity(){
           }
         },
         barThickness: 24,
+        maintainAspectRatio: false
       }
 
 

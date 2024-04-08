@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
-import Intensity from './IntensityGraph';
+import Intensity from './Intensity';
 import Likelihood from './Likelihood';
 import Country from './Country';
 

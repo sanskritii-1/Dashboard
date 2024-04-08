@@ -34,7 +34,8 @@ export default function Country(){
 
             ],
             borderColor: "black",
-            borderWidth: 1
+            borderWidth: 1,
+            // categoryPercentage: 0.2
           }
         ]
       });
@@ -97,10 +98,6 @@ export default function Country(){
               display: false,
             }
           },
-          // ticks:{
-          //   beginAtZero: true,
-          //   stepSize: 10
-          // },
           y:{
             beginAtZero: true,
             // stepSize: stepSize,
@@ -110,14 +107,15 @@ export default function Country(){
               color: "white",
             },
             grid: {
-              display: false,
+                display: false,
+            },
+            ticks:{
+                stepSize: 10
             },
           }
         },
         barThickness: 23,
-        maintainAspectRatio: false,
-        height: 700,
-        width: 700
+        maintainAspectRatio: false
       }
 
 
