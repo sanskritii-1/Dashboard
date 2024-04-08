@@ -7,15 +7,14 @@ body {
     padding: 0;
 }
 
+#root,
+.App,
 .dashboard-container {
     /* display: flex; */
     height: 100%;
     width: 100%;
 }
 
-.whole-sidebar {
-    /* position: relative; */
-}
 
 /* Button to toggle sidebar on small screens */
 .sidebar-toggle-button {
@@ -150,7 +149,7 @@ header h1 {
 }
 
 .intensity-count {
-    width: 800px;
+    width: 200px;
 }
 
 .country-count {
