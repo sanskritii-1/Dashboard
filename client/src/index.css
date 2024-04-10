@@ -15,7 +15,10 @@ body {
     width: 100%;
 }
 
-
+a {
+    color: inherit; /* Use the color inherited from the parent */
+    text-decoration: none; /* Remove underline */
+  }
 /* Button to toggle sidebar on small screens */
 .sidebar-toggle-button {
     position: fixed;
@@ -30,7 +33,7 @@ body {
     z-index: 999;
     width: 30px;
     height: 40px;
-    /* transition: transform 1s ease-in-out; */
+    transition: transform 1s ease-in-out;
 }
 
 /* Sidebar */
@@ -39,7 +42,7 @@ body {
     color: white;
     width: 200px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: opacity 0.5s ease;
     position: fixed;
     height: 100vh;
     display: flex;
@@ -75,11 +78,23 @@ body {
     background-attachment: fixed;
 }
 
+/* .close{
+    transform: translateX(-100%);
+}
+.open{
+    transform: translateX(100%);
+}
+
+.main-content.no-margin {
+    margin-left: 0;
+} */
+
 /* Hide sidebar on small screens */
 @media screen and (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
-        position: fixed;
+        /* position: fixed; */
+        /* display: none; */
         /* Fixes sidebar position */
         z-index: 998;
         /* Ensure sidebar is behind content */

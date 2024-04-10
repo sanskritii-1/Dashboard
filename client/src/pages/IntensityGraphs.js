@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import Sidebar from './Sidebar';
-import Intensity from './Intensity';
-import Likelihood from './Likelihood';
-import Country from './Country';
+// import Sidebar from './Sidebar';
+import IntensityYear from '../components/IntensityGraph/IntensityYear';
 
-function Dashboard() {
+function IntensityGraphs() {
 
     return (
         <div className="dashboard-container">
-            <Sidebar />
+            {/* <Sidebar /> */}
 
             {/* Main Content */}
             <div className="main-content">
@@ -20,13 +18,11 @@ function Dashboard() {
                 {/* Main Content Area */}
                 <div className="box-container">
                     {/* Example boxes */}
-                    <Intensity />
-                    <Likelihood />
-                    <Country />
+                    <IntensityYear />
                 </div>
             </div>
         </div>
     );
 }
 
-export default Dashboard;
+export default IntensityGraphs;

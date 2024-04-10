@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
-import Intensity from '../components/Intensity';
-import Likelihood from '../components/Likelihood';
-import Country from '../components/Country';
-
+import Intensity from '../components/Counts/IntensityCount';
+import Likelihood from '../components/Counts/LikelihoodCount';
+import Relevance from '../components/Counts/RelevanceCount';
+import Region from "../components/Counts/RegionCount"
 function Dashboard() {
 
     return (
@@ -22,6 +22,8 @@ function Dashboard() {
                     {/* Example boxes */}
                     <Intensity />
                     <Likelihood />
+                    <Relevance />
+                    <Region />
                 </div>
             </div>
         </div>

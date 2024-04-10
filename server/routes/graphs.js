@@ -14,7 +14,7 @@ router.post("/getVal", async (req,res)=>{
                 _id: `$${req.body.field}`,
                 count: {$sum:1}
             }},
-            {$match:{_id: {$nin:[null,""]}}}
+            {$match:{_id: {$nin:[null,"", "World"]}}}
         ])
 
         res.json(response);
@@ -24,14 +24,17 @@ router.post("/getVal", async (req,res)=>{
     }
 })
 
-router.post("getMean", async (req, res)=>{
+router.post("/getMean", async (req, res)=>{
     try{
         const response = await Info.aggregate([
             {$group: {
                 _id: `$${req.body.xaxis}`,
                 mean: {$avg: `$${req.body.yaxis}`}
             }},
+            {$match:{_id: {$nin:[null,"", "World"]}}}
         ])
+
+        res.json(response)
     }
     catch(err){
         console.log(err);
