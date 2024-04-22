@@ -2,7 +2,7 @@
 html,
 body {
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     margin: 0;
     padding: 0;
 }
@@ -12,15 +12,15 @@ body {
 .dashboard-container {
     /* display: flex; */
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
 }
 
 a {
-    color: inherit; /* Use the color inherited from the parent */
-    text-decoration: none; /* Remove underline */
+    color: inherit;
+    text-decoration: none; 
   }
-/* Button to toggle sidebar on small screens */
-.sidebar-toggle-button {
+
+  .sidebar-toggle-button {
     position: fixed;
     display: block;
     background-color: #333;
@@ -36,9 +36,10 @@ a {
     transition: transform 1s ease-in-out;
 }
 
-/* Sidebar */
+
 .sidebar {
-    background-color: black;
+    /* background-color: black; */
+    background-color: #2e2b2b;
     color: white;
     width: 200px;
     text-align: center;
@@ -76,6 +77,7 @@ a {
     background-image: linear-gradient(45deg, rgba(109, 87, 88, 255), rgba(56, 48, 59, 255));
     background-size: cover;
     background-attachment: fixed;
+    overflow-x: scroll;
 }
 
 /* .close{
@@ -89,7 +91,87 @@ a {
     margin-left: 0;
 } */
 
-/* Hide sidebar on small screens */
+
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+
+.box-container {
+    display: grid;
+    /* flex-wrap: wrap; */
+}
+
+.box {
+    background-color: #f0f0f0;
+    background-color: rgba(243, 240, 245, 0.3);
+    color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    /*flex: 1; 
+    width: 600px;
+    height: 350px;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.count-graphs{
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: 100px;
+}
+
+.intensity-count {
+    grid-column: span 2;
+    grid-row: span 5;
+}
+.region-count{
+    grid-column: span 1;
+    grid-row: span 8;
+}
+.likelihood-count {
+    grid-row: span 4;
+}
+
+.relevance-count{
+    grid-row: span 4;
+}
+
+.intensity-graphs{
+    grid-auto-rows: 100px;
+}
+.intensity-year{
+    grid-row: span 3;
+}
+.intensity-region{
+    grid-row: span 3;
+}
+.intensity-topic{
+    grid-row: span 5;
+}
+
+
 @media screen and (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
@@ -108,66 +190,14 @@ a {
     .main-content {
         margin-left: 0;
     }
-}
 
-
-/* Sidebar items */
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 10px 0;
-    cursor: pointer;
-}
-
-/* Main content */
-
-
-
-/* Header */
-header {
-    padding: 20px 0;
-    border-bottom: 1px solid #ccc;
-}
-
-header h1 {
-    margin: 0;
-    text-align: center;
-}
-
-
-/* Example box styles */
-.box-container {
-    display: flex;
-    flex-wrap: wrap;
-    /* Allow boxes to wrap to the next line */
-}
-
-.box {
-    background-color: #f0f0f0;
-    background-color: rgba(243, 240, 245, 0.3);
-    color: white;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
-    /* Add some margin between the boxes */
-    /*flex: 1; /* Each box takes equal space */
-    width: 600px;
-    height: 350px;
-    /* Limit the maximum width of each box */
-}
-
-.likelihood-count {
-    width: 370px;
-}
-
-.intensity-count {
-    width: 200px;
-}
-
-.country-count {
-    width: 1300px;
-    height: 750px;
+    .count-graphs{
+        grid-template-columns: 1fr;
+    }
+    .intensity-count,
+    .region-count,
+    .likelihood-count,
+    .relevance-count {
+        grid-column: span 1; /* Span the entire width */
+    }
 }

@@ -4,6 +4,8 @@ import Intensity from '../components/Counts/IntensityCount';
 import Likelihood from '../components/Counts/LikelihoodCount';
 import Relevance from '../components/Counts/RelevanceCount';
 import Region from "../components/Counts/RegionCount"
+// import Country from '../components/Counts/Country';
+
 function Dashboard() {
 
     return (
@@ -18,12 +20,13 @@ function Dashboard() {
                 </header>
 
                 {/* Main Content Area */}
-                <div className="box-container">
+                <div className="box-container count-graphs">
                     {/* Example boxes */}
                     <Intensity />
+                    <Region />
                     <Likelihood />
                     <Relevance />
-                    <Region />
+                    {/* <Country /> */}
                 </div>
             </div>
         </div>

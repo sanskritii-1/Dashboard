@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 // import Sidebar from './Sidebar';
 import IntensityYear from '../components/IntensityGraph/IntensityYear';
+import IntensityRegion from '../components/IntensityGraph/IntensityRegion';
+import IntensityTopic from '../components/IntensityGraph/IntensityTopic';
 
 function IntensityGraphs() {
 
@@ -12,13 +14,15 @@ function IntensityGraphs() {
             <div className="main-content">
                 {/* Header */}
                 <header>
-                    <h1>Dashboard</h1>
+                    <h1>Intensity Graphs</h1>
                 </header>
 
                 {/* Main Content Area */}
-                <div className="box-container">
+                <div className="box-container intensity-graphs">
                     {/* Example boxes */}
                     <IntensityYear />
+                    <IntensityRegion />
+                    <IntensityTopic />
                 </div>
             </div>
         </div>

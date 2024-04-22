@@ -1,43 +1,14 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
 import Chart from "chart.js/auto";
-import { CategoryScale } from "chart.js";
+import { CategoryScale, plugins, scales } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { lineOptions,graphData } from "../ChartOptions/options";
 
 Chart.register(CategoryScale);
 
 export default function Intensity(){
-    const [chartData, setChartData] = useState({
-        labels: [],
-        datasets: [
-          {
-            label: "Mean Intensity",
-            data: [],
-            backgroundColor: [
-              // "rgba(75,192,192,1)",
-              // "#50AF95",
-              // "#f3ba2f",
-              // "#2a71d0",
-
-
-              "#FFADAD",
-              "#FFD6A5",
-              "#FDFFB6",
-              "#7BD3EA",
-              "#756AB6",
-              "#E6A4B4",
-              "#F9B572",
-              "#A1EEBD",
-              "#FA7070",
-              "#FFC6AC",
-              "#116A7B",
-
-            ],
-            borderColor: "black",
-            borderWidth: 1
-          }
-        ]
-      });
+    const [chartData, setChartData] = useState(graphData);
     
 
       useEffect(() => {
@@ -58,6 +29,7 @@ export default function Intensity(){
               datasets: [
                 {
                   ...chartData.datasets[0],
+                  label: "Mean intensity",
                   data: data.map((entry) => entry.mean)
                 }
               ]
@@ -72,52 +44,31 @@ export default function Intensity(){
 
 
       const options = {
-        plugins: {
+        ...lineOptions,
+        plugins:{
+          ...lineOptions.plugins,
           title: {
-            display: true,
+            ...lineOptions.plugins.title,
             text: "Mean Intensity per start year",
-            color: "white",
-            font: {
-              size: 16,
-              family: "arial"
-            }
-          },
-          legend: {
-            display: false,
           }
         },
         scales:{
-          x:{
-            beginAtZero: true,
-            stepSize: 10,
+          ...lineOptions.scales,
+          x: {
+            ...lineOptions.scales.x,
             title:{
-              display:true,
-              text: "Added year",
-              color: "white"
-            },
-            grid:{
-              display: false,
+              ...lineOptions.scales.x.title,
+              text: "Start year",
             }
           },
-          // ticks:{
-          //   beginAtZero: true,
-          //   stepSize: 10
-          // },
-          y:{
-            beginAtZero: true,
-            // stepSize: stepSize,
+          y: {
+            ...lineOptions.scales.y,
             title:{
-              display: true,
+              ...lineOptions.scales.y.title,
               text: "Mean Intensity",
-              color: "white",
-            },
-            grid: {
-              display: false,
             }
           }
-        },
-        // barThickness: 24,
-        maintainAspectRatio: false
+        }
       }
 
 

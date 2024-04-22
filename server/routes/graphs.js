@@ -14,7 +14,7 @@ router.post("/getVal", async (req,res)=>{
                 _id: `$${req.body.field}`,
                 count: {$sum:1}
             }},
-            {$match:{_id: {$nin:[null,"", "World"]}}}
+            {$match:{_id: {$nin:[null,"", "World", "world"]}}}
         ])
 
         res.json(response);
@@ -31,7 +31,9 @@ router.post("/getMean", async (req, res)=>{
                 _id: `$${req.body.xaxis}`,
                 mean: {$avg: `$${req.body.yaxis}`}
             }},
-            {$match:{_id: {$nin:[null,"", "World"]}}}
+            {$match:{
+                _id: {$nin:[null,"", "world","World"]}
+            }}
         ])
 
         res.json(response)

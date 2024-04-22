@@ -24,8 +24,8 @@ export default function Sidebar() {
                     <ul>
                         <li className="item"><NavLink to="/" >Dashboard</NavLink></li>
                         <li className="item"><NavLink to="/intensityGraphs" >Intensity</NavLink></li>
-                        <li className="item"><NavLink to="/likelihoodGraphs">Likelihood</NavLink></li>
-                        <li className="item"><NavLink to="/relevanceGraphs">Relevance</NavLink></li>
+                        {/* <li className="item"><NavLink to="/likelihoodGraphs">Likelihood</NavLink></li>
+                        <li className="item"><NavLink to="/relevanceGraphs">Relevance</NavLink></li> */}
                     </ul>
                 </div>
                 <div className="profile-list-item">
